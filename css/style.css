@@ -4,9 +4,62 @@ body {
 
 h1 {
     color:white;
+    display: block;
+    position: center;
 }
 
-img {
+.identity {
+    margin: 20px;
+    /* border: 2px solid black;
+    background-color: white; */
+    color: white;
+}
+
+form {
+    margin: 20px;
+    padding: 20px;
+}
+
+.age {
+    margin: 20px;
+    color: white;
+}
+ 
+.choices {
+    display: block;
+    float: center;
+    list-style: none;
+    margin:20px;
+    padding: 20px 0 0 0;
+    /* overflow: hidden; */
+}
+
+.choices button{
+    /* display: block; */
+    /* float: center; */
+    /* width: 100px; */
+    height: 40px;
+    margin: 0 15px 0 15px;
+    /* border-radius: 10px; */
+    border: 2px solid black;
+    /* color: white; */
+}
+
+
+
+#animal img {
     width: 100%;
     height: auto;
+    position: relative;
+    -webkit-animation: mover .5s infinite  alternate;
+    animation: mover .5s infinite  alternate;
 }
+    @-webkit-frames mover {
+        0% {transform: translateY(0); }
+        100% { transform: translateY(-100px); }
+    }
+    @keyframes mover {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-100px); }
+    }
+

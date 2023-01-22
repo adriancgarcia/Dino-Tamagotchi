@@ -14,18 +14,40 @@
     <h1>Dino Tamagotchi</h1>
     <!-- <form action ="/action_page.php"> -->
     <form>
-        <label class="name" for ="name">Give me a name</label><br>
-        <input type="text" id ="name" name = "name" value=""><br>
-        <input type="submit" value="submit"> 
-        console.log(value)
+        <label class="identity" for ="identity">Give me a name</label>
+        <input type="text" id ="identity" identity = "identity" value=""><br><br>
+        <input type="submit" value="submit">
     </form>
-    
-    
-    <button class="hunger" type="button">Feed Me!</button>
-    <button class="sleepy" type="button">Turn off the lights</button>
-    <button class="bored" type="button">Let's Play!</button>
 
-    <img src ="assets/teradactyl.png" alt="dino">
+    <div class ="choices">
+        <button class="hunger js-hunger-button" type="button">Feed Me!</button>
+        <button class="sleepy js-sleepy-button" type="button">Turn off the lights</button>
+        <button class="bored js-bored-button" type="button">Let's Play!</button>
+
+    <form>
+        <label class = "age" for = "age">Age</label><br><br>
+        <input type = "text" id = "age" age = "age" value = "5">
+    </form>
+    </div>
+
+    <!-- <ul class="choices js-buttons">
+        <li>
+            <a class="hunger" href="#">Feed Me</a>
+        </li>
+        <li>
+            <a class="sleepy" href="#">Turn off the lights</a>
+        </li>
+        <li>
+            <a class="bored" href="#">Let's Play</a>
+        </li> -->
+        
+    <!-- </ul> -->
+    <div id="animal">
+        <img src ="assets/teradactyl.png" alt="dino">
+            <div id = "animalAnimation">
+            </div>
+    </div>
+
     
 
 </body>
