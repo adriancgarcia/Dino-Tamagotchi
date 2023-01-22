@@ -19,15 +19,25 @@
         <input type="submit" value="submit">
     </form>
 
-    <div class ="choices">
-        <button class="hunger js-hunger-button" type="button">Feed Me!</button>
-        <button class="sleepy js-sleepy-button" type="button">Turn off the lights</button>
-        <button class="bored js-bored-button" type="button">Let's Play!</button>
+    <div class ="choices" type="js-buttons">
+        <button class="hunger js-hunger-button" type="js-button">Feed Me!</button>
+        <button class="sleepy js-sleepy-button" type="js-button">Turn off the lights</button>
+        <button class="bored js-bored-button" type="js-button">Let's Play!</button>
+    </div>
 
-    <form>
-        <label class = "age" for = "age">Age</label><br><br>
-        <input type = "text" id = "age" age = "age" value = "5">
-    </form>
+    <div class = "metrics">
+        <form>
+            <input type = "text" id = "hunger" age = "age" value = "1">
+            <input type = "text" id = "sleepy" age = "age" value = "1">
+            <input type = "text" id = "bored" age = "age" value = "1">
+        </form>
+    </div>
+
+    <div class = "age">
+        <form>
+            <label class = "age" for = "age">Age</label>
+            <input type = "text" id = "age" age = "age" value = "5">
+        </form>
     </div>
 
     <!-- <ul class="choices js-buttons">
