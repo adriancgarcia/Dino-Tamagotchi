@@ -4,90 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tamagotchi</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="css/style.css">
-    <!-- <script type="text/javascript" src="js/app.js"></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,600&family=Montserrat+Subrayada&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/tamagotchi_style.css">
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <style>
+        body{
+            background-image: url('Assets/landscape-1844226.svg')
+        }
+
+    </style>
 </head>
 
 <body>
-    <h1>Dino Tamagotchi</h1>
-    <!-- <form action ="/action_page.php"> -->
-    <form>
-        <label class="identity" for ="identity">Give me a name</label>
-        <input type="text" id ="identity" identity = "identity" value=""><br><br>
-        <input type="submit" value="submit">
-    </form>
-
-    <div class ="choices">
-        <input type="button" value="Feed Me" id="inc" class = "hunger" onclick="incHunger()"/>
-            <label id="hunger-display" class counter></label>
-        
-            <input type="button" value="Turn off the lights" id="inc" class = "sleepy" onclick="incSleepy()"/>
-            <label id="sleepy-display" class = counter></label>
-
-        <input type="button" value="Let's Play!" id="inc" class = "bored" onclick="incBored()"/>
-            <label id="bored-display"></label>
-
-
-        <!-- <input type="button" value="Decrease" id="dec" onclick="decNumber()"/> -->
+    <div id = gameTitle>
+        <h1>Dino Tamagotchi</h1>
+    </div>
     
-        
+    <div class = "topBoard">
+        <div class = petName>
+            <span><p></span></p>
 
 
-
-        <!-- <button onclick= "buttonClick()" class="increment-btn">Feed Me!</button>
-            <input type= "text" class="hunger" value ="0"></input>
-
-        <button class="button sleepy" class="increment-btn">Turn off the lights</button>
-        <input type= "text" id="sleepy" value ="0"></input>
-
-        <button class="button bored" class="increment-btn">Let's Play!</button>
-        <input type= "text" id="bored" value="0"/> -->
+        <p><span id="name"></span></p>
     </div>
 
-    <!-- <div id = "metrics">
-        <form>
-            <input type = "text" id = "hunger" hunger = "hunger" value = "1">
-            <input type = "text" id = "sleepy" sleepy = "sleepy" value = "1">
-            <input type = "text" id = "bored" bored = "bored" value = "1">
-        </form>
-    </div> -->
-
-
-    <div class = "age">
-        <!-- <button onclick="increment() "> Increment</button> -->
-        
-        <!-- <div id = "number">0</div> -->
-        <form>
-             <div class="text">
-                <span class="number" id="nhb_01"></span>
-            <label class = "age" for = "age">Age</label>
-            <input type = "text" id = "myText" age = "age" value ="0">
+    <div class="main-console">
+		<div class="tamagotchi">
+			<div class="tama">
+				<p>Sleep: <span id="sleep-tama">%</p>
+				<p>Hunger: <span id="hunger-tama"></span>%</p>
+				<p>Play: <span id="play-tama"></span>%</p><br>
+                <p id="score-bar">Age: <span id="age"></span></p> 
             </div>
-        </form>
-    </div>
 
-    <!-- <ul class="choices js-buttons">
-        <li>
-            <a class="hunger" href="#">Feed Me</a>
-        </li>
-        <li>
-            <a class="sleepy" href="#">Turn off the lights</a>
-        </li>
-        <li>
-            <a class="bored" href="#">Let's Play</a>
-        </li> -->
-        
-    <!-- </ul> -->
-    <div id="animal">
-        <img src ="assets/teradactyl.png" alt="dino">
-            <div id = "animalAnimation">
+            <!-- <p id="demo"></p> -->
+
+            <div class ="buttons">
+                <a href="#" id="action-start-game">Start</a>
+                <a href="#" id="action-sleep">Sleep</a>
+                <a href="#" id="action-feed">Feed</a>
+                <a href="#" id="action-play">Play</a>
             </div>
+            <div id = "animal">
+                <img src="assets/teradactyl.png" alt="dino">
+                <div id = "animalAnimation">
+            </div>
+        </div>
     </div>
+            
 
-    <!-- <input type="text" id = "mytext"/> -->
-    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/tamagotchi.js"></script>
 </body>
-</html>
+</html

@@ -1,0 +1,139 @@
+body {
+    /* background-color: blue; */
+    background-image: url('Assets/landscape.svg');
+    background-size: cover;
+}
+
+
+#gameTitle h1 {
+    color: #D5CAB1;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    Padding:20px 0 20px 0;
+
+}
+
+.topBoard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+    margin:60px;
+    padding:20px;
+    color: #D5CAB1;
+    /* overflow: hidden; */
+}
+
+form {
+    margin: 20px;
+    padding: 20px;
+    color: white;
+}
+
+.main-console {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+    margin:20px;
+    padding: 20px 20px 0  20px;
+    color: #D5CAB1
+    /* overflow: hidden; */
+}
+
+/*GAME SCREEN*/
+
+.tamagotchi {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 50vh;
+    transform: translateY(-50%);
+    font-size: 80px;
+    text-align: center;
+  }
+
+  #name {
+    display: inline-block;
+    margin-bottom: 50px;
+    color: #D5CAB1;
+    padding: 5px 10px;
+    font-size: 30px;
+    background-color: #0593A8;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;
+  }
+  
+  #name {
+    background-color: #0593A8;
+    font-family: 'Kanit', sans-serif;
+    color: #D5CAB1;
+
+  }
+  
+  .buttons a{
+    display: inline-block;
+    font-size: 40px;
+    background-color: transparent;
+    border: 2px solid #0593A8;
+    padding: 10px 20px;
+    margin: 100px 20px 0px 20px;
+    transition: background-color .1s;
+    text-decoration: none;
+    color: #0593A8;
+    font-weight: 300;
+    font-family: 'Kanit', sans-serif;
+    transition: background-color .1s, color .1s;
+  }
+  
+  .buttons a:hover, a:hover {
+    background-color: #0593A8;
+    color: #D5CAB1;
+  }
+  
+  .buttons  {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .tama {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 60;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .tama span {
+    font-weight: 500;
+  }
+  
+  .tama p {
+    display: inline;
+  }
+
+
+
+#animal {
+    margin:0 0 0 500px;
+}
+
+
+#animal img {
+    width: 50%;
+    height: auto;
+    /* margin: 0 0 60px 0;
+    padding: 0 0 100px 0; */
+    -webkit-animation: mover .5s infinite  alternate;
+    animation: mover .5s infinite  alternate;
+}
+    @-webkit-frames mover {
+        0% {transform: translateY(0); }
+        100% { transform: translateY(-100px); }
+    }
+    @keyframes mover {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-100px); }
+    }
+
