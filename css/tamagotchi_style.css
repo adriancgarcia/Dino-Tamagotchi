@@ -6,6 +6,9 @@ body {
 
 
 #gameTitle h1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     color: #D5CAB1;
     text-align: center;
     font-family: 'Kanit', sans-serif;
@@ -24,36 +27,13 @@ body {
     /* overflow: hidden; */
 }
 
-form {
+/* form {
     margin: 20px;
     padding: 20px;
     color: white;
-}
+} */
 
-.main-console {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    list-style: none;
-    margin:20px;
-    padding: 20px 20px 0  20px;
-    color: #D5CAB1
-    /* overflow: hidden; */
-}
-
-/*GAME SCREEN*/
-
-.tamagotchi {
-    position: absolute;
-    display: block;
-    width: 100%;
-    top: 50vh;
-    transform: translateY(-50%);
-    font-size: 80px;
-    text-align: center;
-  }
-
-  #name {
+#name {
     display: inline-block;
     margin-bottom: 50px;
     color: #D5CAB1;
@@ -68,8 +48,78 @@ form {
     background-color: #0593A8;
     font-family: 'Kanit', sans-serif;
     color: #D5CAB1;
+}
 
+
+
+.main-console {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+    margin:20px;
+    padding: 20px 20px 0  20px;
+    color: #D5CAB1
+    /* overflow: hidden; */
+}
+
+
+
+/*GAME SCREEN*/
+
+.tamagotchi {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    top: 50vh;
+    transform: translateY(-50%);
+    font-size: 40px;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 100px 20px 0px 20px;
+    text-decoration: none;
+    color: #0593A8;
+    font-family: 'Kanit', sans-serif;
   }
+
+  .tama {
+    font-family: 'Kanit', sans-serif;
+    /* font-weight: 60;
+    font-size: 30px; */
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .tama span {
+    font-weight: 200;
+  }
+  
+  .tama p {
+    display: inline;
+    padding: 20px;
+  }
+
+
+  #start {
+    font-family: 'Kanit', sans-serif;
+    /* font-weight: 60;
+    font-size: 30px; */
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+  }
+  
+  #start span {
+    font-weight: 200;
+  }
+  
+  #start p {
+    display: inline;
+    padding: 20px;
+  }
+
+
   
   .buttons a{
     display: inline-block;
@@ -95,25 +145,32 @@ form {
     width: 100%;
     text-align: center;
   }
+
   
-  .tama {
+
+  #start a{
+    display: inline-block;
+    font-size: 40px;
+    background-color: transparent;
+    border: 2px solid #0593A8;
+    padding: 10px 20px;
+    margin: 100px 20px 0px 20px;
+    transition: background-color .1s;
+    text-decoration: none;
+    color: #0593A8;
+    font-weight: 300;
     font-family: 'Kanit', sans-serif;
-    font-weight: 60;
-    font-size: 30px;
+    transition: background-color .1s, color .1s;
+  }
+
+  #start a:hover, a:hover {
+    background-color: #0593A8;
+    color: #D5CAB1;
+  }
+#start  {
     width: 100%;
     text-align: center;
-    padding: 30px;
   }
-  
-  .tama span {
-    font-weight: 500;
-  }
-  
-  .tama p {
-    display: inline;
-  }
-
-
 
 #animal {
     margin:0 0 0 500px;

@@ -107,6 +107,9 @@ function startGame() {
 
 
 //Tamagotchi's name
+
+
+
 var tamagotchiName = prompt("Please, enter a name for your tamagotchi:", "");
 document.querySelector("#name").innerHTML = tamagotchiName;
 if (tamagotchiName == null || tamagotchiName.replace(/\s/g, '') == "") {
