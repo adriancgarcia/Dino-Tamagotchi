@@ -108,7 +108,28 @@ function startGame() {
 
 //Tamagotchi's name
 
+// var name = prompt("Enter your name", "Enter name");
+// if (name != null) {
+//   alert("Hello! "+ name)
+// }
 
+// const btn= document.getElementById("btn");
+
+// btn.addEventListener('click', function(){
+//   var name = document.getElementById("myName").value;
+//   alert("Name: "+ name);
+// });
+    
+// function myFunction() {
+//     let text;
+//     let person = prompt("Please enter your name:", "Harry Potter");
+//     if (person == null || person == "") {
+//       text = "User cancelled the prompt.";
+//     } else {
+//       text = "Hello " + person + "! How are you today?";
+//     }
+//     document.getElementById("demo").innerHTML = text;
+//   }
 
 var tamagotchiName = prompt("Please, enter a name for your tamagotchi:", "");
 document.querySelector("#name").innerHTML = tamagotchiName;

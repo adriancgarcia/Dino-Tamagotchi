@@ -33,6 +33,8 @@ body {
     color: white;
 } */
 
+
+
 #name {
     display: inline-block;
     margin-bottom: 50px;
@@ -106,7 +108,7 @@ body {
     /* font-weight: 60;
     font-size: 30px; */
     width: 100%;
-    text-align: center;
+    text-align: left;
     padding: 30px;
   }
   
@@ -145,9 +147,7 @@ body {
     width: 100%;
     text-align: center;
   }
-
   
-
   #start a{
     display: inline-block;
     font-size: 40px;
