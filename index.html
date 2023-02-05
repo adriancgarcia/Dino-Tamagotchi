@@ -15,10 +15,9 @@
     <!-- <script type="text/javascript" src="js/app.js"></script> -->
 
     <style>
-        body{
-            background-image: url('Assets/landscape-1844226.svg')
+        body {
+            background-image: url('assets/landscape-1844226.svg');
         }
-
     </style>
 </head>
 
@@ -26,44 +25,26 @@
     <div id = gameTitle>
         <h1>Dino Tamagotchi</h1>
     </div>
-    
-    <div class = "topBoard">
-        <div class = petName>
-            <!-- <span><p></span></p> -->
 
-            <!-- <button onclick="myFunction()">Give your Tamagotchi a name.</button> -->
-        <p><span id="name"></span></p>
-
-        <!-- <h3>Create Input Box</h3>
-    <input type="text" id="myName" placeholder="Enter Name">
-    <button id="btn">Save</button> -->
-
-    <p id="demo"></p>
-
-
-    </div>
+    <h1><p><span id="name"></span class = "newName"></span></p>Tamagotchi</h1>
 
     <div class="main-console">
-        <div id="start">
-            <!-- <p> Start <span id="start-game"></span></p> -->
-            <a href="#" id="action-start-game">Start</a>
-        </div>
-
+        <p id="age">Age:<span class="edad"></span></p> 
 		<div class="tamagotchi">
-			<div class="tama">
-				<p>Sleep: <span id="sleep-tama"></span>%</p>
-				<p>Hunger: <span id="hunger-tama"></span>%</p>
-				<p>Play: <span id="play-tama"></span>%</p><br>
-                <!-- <p id="score-bar">Age: <span id="age"></span></p>  -->
+            <div class="actions">   
+				<p>Sleep: <span id="nap"></span></p>
+				<p>Hunger: <span id="feed"></span></p>
+				<p>Play: <span id="play-time"></span></p><br>    
             </div>
 
-            <!-- <p id="demo"></p> -->
-
             <div class ="buttons">
-                <!-- <a href="#" id="action-start-game">Start</a> -->
-                <a href="#" id="action-sleep">Sleep</a>
-                <a href="#" id="action-feed">Feed</a>
-                <a href="#" id="action-play">Play</a>
+                <button id="sleep">Sleep<span id = "sleepy"></span></button>
+                <button id="eat">Feed me<span id = "hungry"></span></button>
+                <button id="play">Play<span id = "bored"></span></button>
+
+                <div class ="start">
+                    <button id="start-button" id="start">Start</button>
+                </div>
             </div>
             <div id = "animal">
                 <img src="assets/teradactyl.png" alt="dino">
@@ -74,5 +55,7 @@
             
 
     <script type="text/javascript" src="js/tamagotchi.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
 </body>
 </html
