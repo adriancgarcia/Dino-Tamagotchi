@@ -1,197 +1,150 @@
-console.log("Tamagotchi!");
+// console.log("Tamagotchi!");
 
-// Set the date we're counting down to
-const countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+setInterval(() => {
+  const x = Math.floor(Math.random()* 500)
+  const y = Math.floor(Math.random() * -400)
+  // myTamagotchi.style.transform = `translate(${x}px,${y}px)`;
+},1000)
 
-// Update the count down every 1 second
-let x = setInterval(function() {
+const sleep = document.getElementById("#sleep")
+const feed = document.getElementById("#eat")
+const play = document.getElementById("#play")
+const start = document.querySelectorAll("#start")
+const age = document.getElementById("#age")
+const tamaName = document.getElementById("newname")
 
-  // Get today's date and time
-let now = new Date().getTime();
 
-  // Find the distance between now and the count down date
-   distance = countDownDate - now;
+function startGame () {
+  hello()
+  Tamagotchi.ageIncrease()
+    Tamagotchi.goToSleep()
+    Tamagotchi.letsPlay()
+    Tamagotchi.letsEat()
+    increaseFun()
+    increaseHunger()
+    increaseSleep()
+}
 
-  // Time calculations for days, hours, minutes and seconds
-//   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (100 * 60)) / 1000);
+// start.addEventListener('click', startGame)
 
-  // Display the result in the element with id=""
-  document.getElementById("sleep-tama").innerHTML = ' 1' + seconds;
-  document.getElementById("hunger-tama").innerHTML = ' 1' + seconds;
-  document.getElementById("play-tama").innerHTML = ' 1' + seconds;
-
-  // If the count down is finished, write some text
-  if (distance <= 0) {
-    clearInterval(x);
-    document.getElementById("sleep-tama").innerHTML = "GAME OVER";
+  function hello() {
+    let tamaName=prompt("Give your tamagotchi a name.")
+    tamaName=tamaName[0].toUpperCase() + tamaName.substring(1)
+    if (tamaName != null) {
+        document.querySelector('.newName').innerText = tamaName
   }
-}, 500);
 
-const sleepBtn = document.querySelector("#action-sleep");
-const feedBtn = document.querySelector("#action-feed");
-const playBtn = document.querySelector("#action-play");
-const startBtn = document.querySelector("#action-start-game");
-
-  //Constants for main bar
-const sleepTama = document.querySelector("#sleep-tama");
-const hungerTama = document.querySelector("#hunger-tama");
-const playTama = document.querySelector("#play-tama");
-const scoreBar = document.querySelector("#age-tama");
-//
-
-//Game settings
-const maxSleep = 300;
-const maxHunger = 300;
-const maxPlay = 300;
-//Game speed
-let day = 20;
-
-//New object
-function Tamagotchi() {
-  this.Sleep = maxSleep;
-  this.Hunger = maxHunger;
-  this.Play = maxPlay;
 }
 
-//Abilities
-Tamagotchi.prototype.actionSleep = function() {
-    this.sleep+=40 / (day * 2)
-};
-
-Tamagotchi.prototype.actionFeed = function() {
-	this.hunger+=120 / (day * 2)
-};
-
-Tamagotchi.prototype.actionPlay = function() {
-	this.play+=80 / (day * 2)
-};
-
-Tamagotchi.prototype.tick = function() {
-    this.sleep--;
-    this.hunger-=3;
-    this.play-=2;
-};
-
-let tmgch = new Tamagotchi();
-let sleepTamaCount;
-let hungerTamaCount;
-let playTamaCount;
-let age = 0;
-
-//Controllers
-sleepBtn.addEventListener("click", function() {
-	tmgch.actionSleep();
-});
-
-feedBtn.addEventListener("click", function() {
-	tmgch.actionEat();
-});
-
-playBtn.addEventListener("click", function() {
-	tmgch.actionPlay();
-});
-
-startBtn.addEventListener("click", function() {
-	startGame();
-});
-
-//Togglers for buttons
-document.querySelector(".buttons").classList.toggle("hide");
-document.querySelector(".tama").classList.toggle("hide");
-
-function startGame() {
-	document.querySelector(".buttons").classList.toggle("hide");
-	document.querySelector(".tama").classList.toggle("hide");
+class Game {
+  constructor(hungry, sleep, bored, age) {
+    this.hungry=100
+    this.sleep=100
+    this.bored=100
+    this.age=0
 }
-
-
-//Tamagotchi's name
-
-// var name = prompt("Enter your name", "Enter name");
-// if (name != null) {
-//   alert("Hello! "+ name)
-// }
-
-// const btn= document.getElementById("btn");
-
-// btn.addEventListener('click', function(){
-//   var name = document.getElementById("myName").value;
-//   alert("Name: "+ name);
-// });
-    
-// function myFunction() {
-//     let text;
-//     let person = prompt("Please enter your name:", "Harry Potter");
-//     if (person == null || person == "") {
-//       text = "User cancelled the prompt.";
-//     } else {
-//       text = "Hello " + person + "! How are you today?";
-//     }
-//     document.getElementById("demo").innerHTML = text;
-//   }
-
-var tamagotchiName = prompt("Please, enter a name for your tamagotchi:", "");
-document.querySelector("#name").innerHTML = tamagotchiName;
-if (tamagotchiName == null || tamagotchiName.replace(/\s/g, '') == "") {
-    tamagotchiName = "Tamagotchi";
-    document.querySelector("#name").innerHTML = tamagotchiName;
-}
-
-//Start game
-	core();
-	let coreUpdate = setInterval(core, 100 * day);
-
-	//Main function of tamagotchi
-	function core() {
-		// console.log(tmgch);
-		sleepTamaCount = (tmgch.sleep / maxSleep * 100).toFixed(2);
-		hungerTamaCount = (tmgch.hunger / maxHunger * 100).toFixed(2);
-		playTamaCount = (tmgch.play / maxPlay * 100).toFixed(2);
+letsEat() {
+  let interval = setInterval(() => {
+      this.hungry-=10
+      if (this.hungry<=0){
+          clearInterval(interval)
+          return gameOver()
+      } else if ((this.hungry<=10)&&(this.sleep>1)&&(this.bored>1)) {
+          alert("I'm starving!!!!")
+      }
+      document.querySelector('#hungry').innerHTML = this.hungry+'%'
+  },7000);
+  }
+letsPlay() {
+      let myInterval= setInterval(() => {
+          this.bored-=10
+          if (this.bored<=0) {
+              clearInterval(myInterval)
+              return gameOver()
+          } else if ((this.bored <=10) && (this.sleep>1) && (this.hungry>1)) {
+              alert("I'm sooo bored'! Let's do something fun!")
+          }
+          document.querySelector('#eat').innerHTML = this.bored+'%'
+      },7000)
+  }
+goToSleep() {
+      let intervalId= setInterval(() => {
+           this.sleep-=10
+           document.body.style.opacity=1
+           if (this.sleep<=0) {
+               clearInterval(intervalId)
+               return gameOver()
+           } else if ((this.sleep <=10) && (this.hungry>1) && (this.bored>1)) {
+               alert("I'm tired!!!!")
+           }
+           document.querySelector('#sleep').innerHTML = this.sleep+'%'
+       },7000)
+   }
+ageIncrease() {
+      setInterval(() => {
+      this.age++
+      if(this.hungry<=10 || this.sleep<=10 || this.bored<=10) {
+        adult.style.display='none'
+      }
+      document.querySelector('.edad').innerHTML = this.age
+      }, 6000)
     }
+  }
 
-//Age increase
-age++;
-scoreBar.innerHTML = '' + age;
+  const Tamagotchi = new Game ('Pet Tamagotchi')
+    
 
-//Death ability
-if ((playTamaCount <= 0) || (sleepTamaCount <= 0) || (hungerTamaCount <= 0)) {
-    playTamaCount = 0;
-    sleepTamaCount = 0;
-    hungerTamaCount = 0;
-    clearInterval(coreUpdate);
-    alert('Your age is ' + age);
-}
+  function increaseHunger() {
+      if(Tamagotchi.hungry <=90) {
+          Tamagotchi.hungry+=10
+      }
+  document.querySelector('#feed').innerHTML = Tamagotchi.hungry
+  } 
+  
+  function increaseSleep() {
+      if(Tamagotchi.sleep <=90) {
+          Tamagotchi.sleep+=10
+      }
+  document.querySelector('#nap').innerHTML = Tamagotchi.sleep
+  }
 
-//Max health percentage (real)
-//Little help for player
-if (tmgch.sleep >= (maxSleep + (maxSleep / 100 * 20))) {
-    tmgch.sleep = maxSleep + (maxSleep / 100 * 20);
-}
+  function increaseFun() {
+      if(Tamagotchi.bored <=90) {
+          Tamagotchi.bored+=10
+      }
+  document.querySelector('#play-time').innerHTML = Tamagotchi.bored
+  }
 
-if (tmgch.hunger >= (maxHunger + (maxHunger / 100 * 20))) {
-    tmgch.hunger = maxHunger + (maxHunger / 100 * 20);
-}
+  feed.addEventListener('click', () => {
+    increaseHunger()
+    })
+    
+  sleep.addEventListener('click', () => {
+    increaseSleep()
+    
+    })
+        
+  play.addEventListener('click', () => {
+    increaseFun()
+    })
 
-if (tmgch.play >= (maxPlay + (maxPlay / 100 * 20))) {
-    tmgch.play = maxPlay + (maxPlay / 100 * 20);
-}
+    function gameOver() {
+      feed.remove()
+      sleep.remove()
+      play.remove()
+      age.remove()
+  }
+  
 
-//Max health percentage (for player)
-if ((tmgch.sleep / maxSleep * 100) > 100) {
-    sleepTamaCount = 100;
-}
-if ((tmgch.hunger / maxHunger * 100) > 100) {
-    hungerTamaCount = 100;
-}
-if ((tmgch.play / maxPlay * 100) > 100) {
-    playTamaCount = 100;
-}
+    setInterval(() => {
+      const y =  Math.floor(Math.random()* 900)
+      const z =  Math.floor(Math.random()* -300)
+      // angel.style.transform = `translate(${y}px, ${z}px)`;
+  },2000)
 
-//Show Tama on screen
-sleepTama.innerHTML = sleepTamaCount;
-hungerTama.innerHTML = hungerTamaCount;
-playTama.innerHTML = playTamaCount;
 
-//Remove Tama every tick
-tmgch.tick();
+   
+
+
+
+
